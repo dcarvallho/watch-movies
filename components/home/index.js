@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Card from "../cards";
 import style from "./style.module.scss";
+import useTestContext from "../../hooks/use-test-context";
 
 const HomeContainer = () => {
   const [state, setState] = useState([]);
+  const { test } = useTestContext()
 
   useEffect(() => {
     fetch(
@@ -30,6 +32,7 @@ const HomeContainer = () => {
           </>
         ))}
         <Card />
+        Teste de contexto aqui!{test}
       </div>
     </div>
   );
