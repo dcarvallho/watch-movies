@@ -1,11 +1,12 @@
 .cardContainer {
     height: 35rem;
     width: 35rem;
-    display: flex;
+    flex-direction: column;
     border: 1px solid blue;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     justify-content: center;
     align-items: flex-end;
-    border-radius: 1rem;
     margin-top: 1rem;
 
     &Link {

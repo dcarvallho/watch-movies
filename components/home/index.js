@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect} from "react";
 import Card from "../cards";
 import style from "./style.module.scss";
 import useTestContext from "../../hooks/use-test-context";
 
 const HomeContainer = () => {
-  const [state, setState] = useState([]);
-  const { test } = useTestContext()
+  const { data } = useTestContext()
 
   return (
     <div className={style.container}>
       <div>
-        {state.map((states) => (
-          <>
-            <div key={states.id}>{states.original_title}</div>
-            <div>{states.poster_path}</div>
-          </>
+        <Card>
+          <p>Testando children</p>
+        </Card>
+        {data.map((datas)=>(
+          <li key={datas.id}>{datas.title}</li>
         ))}
-        <Card />
-        Teste de contexto aqui!{test}
       </div>
     </div>
   );
