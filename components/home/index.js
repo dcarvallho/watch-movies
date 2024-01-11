@@ -9,11 +9,10 @@ const HomeContainer = () => {
   return (
     <div className={style.container}>
       <div>
-        <Card>
-          <p>Testando children</p>
-        </Card>
-        {data.map((datas)=>(
-          <li key={datas.id}>{datas.title}</li>
+        {data.map((datas) => (
+          <Card key={datas.id} movieTitle={datas.title}>
+            <img src={datas.poster_path} />
+          </Card>
         ))}
       </div>
     </div>
