@@ -3,3 +3,5 @@ export const fetchMoviesResults = (fetch) => {
     return <li key={fetchs.id}>{fetchs.title}</li>;
   });
 };
+
+export const URL_IMAGE = 'https://image.tmdb.org/t/p/original';

@@ -4,7 +4,7 @@ import React from "react";
 import style from "./style.module.scss";
 import PropTypes from "prop-types";
 
-const Card = ({ children, movieTitle }) => {
+const Card = ({ children, movieTitle, className }) => {
   return (
     <>
       <div className={style.cardContainer}>{children}</div>
