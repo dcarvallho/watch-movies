@@ -1,5 +1,11 @@
 .container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    &List {
+        max-width: 800px;
+        margin: 14px auto;
+    }
 }
