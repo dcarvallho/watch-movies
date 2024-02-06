@@ -6,13 +6,13 @@ import PropTypes from "prop-types";
 
 const Card = ({ children, movieTitle, className }) => {
   return (
-    <>
-      <div className={style.cardContainer}>{children}</div>
+    <div className={style.cardContainer}>
+      <h3>{movieTitle}</h3>
+      <div className={style.cardContainerImg}>{children}</div>
       <div className={style.cardContainerLink}>
         <Link href="#">Acessar</Link>
       </div>
-      <h3>{movieTitle}</h3>
-    </>
+    </div>
   );
 };
 

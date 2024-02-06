@@ -1,23 +1,16 @@
 .cardContainer {
-    height: 35rem;
-    width: 35rem;
-    flex-direction: column;
-    border: 1px solid blue;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    justify-content: center;
-    align-items: flex-end;
-    margin-top: 1rem;
+    margin: 0;
+    padding: 0;
 
     &Link {
+        padding: 0;
+        margin-top: -5px;
         color: white;
-        font-weight: bold   ;
+        font-weight: bold;
         background-color: blue;
         height: 2.5rem;
         width: 100%;
         text-align: center;
-        text-justify: center;
-        flex-wrap: wrap;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }
