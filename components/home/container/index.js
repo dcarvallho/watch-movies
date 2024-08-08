@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Card from "../cards";
+import Card from "../../commons/cards";
 import style from "./style.module.scss";
 import useTestContext from "../../hooks/use-test-context";
-import { URL_IMAGE } from "../../utils";
+import { URL_IMAGE } from "../../../utils";
 
 const HomeContainer = () => {
   const { data } = useTestContext();
