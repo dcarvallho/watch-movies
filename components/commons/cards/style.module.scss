@@ -1,6 +1,24 @@
 .cardContainer {
-    margin: 0;
-    padding: 0;
+    width: 400px;
+    border: 1px solid gray;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+
+    &Image {
+        
+    }
+
+    &Buttons {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    &Info {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
 
     &Link {
         padding: 0;
