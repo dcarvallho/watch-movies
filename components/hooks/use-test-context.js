@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import TestContext from '../context/TestContext';
+import TestContext from '../../context/TestContext';
 
 const useTestContext = () => {
     const context = useContext(TestContext);

@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Wrapper from "../components/wrapper";
+import Wrapper from "../components/commons/wrapper/index";
 
 function MyApp({ Component, pageProps }) {
   return (
