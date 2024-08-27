@@ -8,15 +8,22 @@ const HomeContainer = () => {
   const { data } = useTestContext();
 
   return (
-    <div>
-      <div className={style.container}>
-        <div className={style.containerList}>
-          {data.map((datas) => (
-            <Card key={datas.id} movieTitle={datas.title} overview={datas.overview} releaseDate={datas.release_date}>
-                <img src={`${URL_IMAGE}/${datas.backdrop_path}`} className={style.teste}/>
-            </Card>
-          ))}
-        </div>
+    <div className={style.container}>
+      <div className={style.containerList}>
+        {data.map((datas) => (
+          <Card
+            key={datas.id}
+            movieTitle={datas.title}
+            overview={datas.overview}
+            releaseDate={datas.release_date}
+            pontuation={datas.vote_average}
+          >
+            <img
+              src={`${URL_IMAGE}/${datas.backdrop_path}`}
+              className={style.teste}
+            />
+          </Card>
+        ))}
       </div>
     </div>
   );

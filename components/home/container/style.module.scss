@@ -1,11 +1,12 @@
 .container {
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr;
-
+    
     &List {
-        
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        grid-row-gap: 2rem;
     }
 }
 
