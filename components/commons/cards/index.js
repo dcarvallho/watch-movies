@@ -33,19 +33,19 @@ const Card = ({
 
   return (
     <div className={style.cardContainer}>
-      <div className={style.cardContainerImage}>{children}</div>
-      <div className={style.cardContainerInfo}>
+      <main className={style.cardContainerImage}>{children}</main>
+      <section className={style.cardContainerInfo}>
         <h1>{movieTitle}</h1>
-        <div className={style.headerCard}>
+        <article className={style.headerCard}>
           <h3>{releaseDate}</h3>
           <span>{star.svg}{pontuation}</span>
-        </div>
+        </article>
         <p>{overview}</p>
         <div className={style.cardContainerButtons}>
           <ButtonComponent actionButton={goToTrailer}>Ir para o trailer</ButtonComponent>
           <ButtonComponent actionButton={handleCheckIngress}>Verificar disponibilidade</ButtonComponent>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
