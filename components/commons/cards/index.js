@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useRouter } from "next/router";
 import style from "./style.module.scss";
 import PropTypes from "prop-types";
 import ButtonComponent from "../button";
-import star from '../../../public/star.svg'
+import star from "../../../public/star.svg";
 import { formatedUrlParams } from "../../../utils";
 
 const Card = ({
@@ -16,20 +15,21 @@ const Card = ({
   className,
   pontuation,
 }) => {
-  const router = useRouter();
-
   const handleCheckIngress = () => {
-    router.replace({
-      pathname: `https://www.ingresso.com/filme/${formatedUrlParams(movieTitle)}`,
-    });
-  }
+    const url = `https://www.ingresso.com/filme/${encodeURIComponent(
+      movieTitle
+    )}`;
+
+    window.open(url, "_blank");
+  };
 
   const goToTrailer = () => {
-    router.replace({
-      pathname: `https://www.youtube.com/results`,
-      query: { search_query: `${movieTitle} trailer` }
-    })
-  }
+    const url = `https://www.youtube.com/results?search_query=${encodeURIComponent(
+      movieTitle
+    )}+trailer`;
+
+    window.open(url, "_blank");
+  };
 
   return (
     <div className={style.cardContainer}>
@@ -38,12 +38,19 @@ const Card = ({
         <h1>{movieTitle}</h1>
         <article className={style.headerCard}>
           <h3>{releaseDate}</h3>
-          <span>{star.svg}{pontuation}</span>
+          <span>
+            {star.svg}
+            {pontuation}
+          </span>
         </article>
         <p>{overview}</p>
         <div className={style.cardContainerButtons}>
-          <ButtonComponent actionButton={goToTrailer}>Ir para o trailer</ButtonComponent>
-          <ButtonComponent actionButton={handleCheckIngress}>Verificar disponibilidade</ButtonComponent>
+          <ButtonComponent actionButton={goToTrailer}>
+            Ir para o trailer
+          </ButtonComponent>
+          <ButtonComponent actionButton={handleCheckIngress}>
+            Verificar disponibilidade
+          </ButtonComponent>
         </div>
       </section>
     </div>

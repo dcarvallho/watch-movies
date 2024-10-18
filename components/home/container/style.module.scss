@@ -7,6 +7,17 @@
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         grid-row-gap: 2rem;
+
+        @media (min-width: 832px) and (max-width: 1280px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: 832px) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
     }
 }
 
