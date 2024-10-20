@@ -1,40 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Card from "../../commons/cards";
 import style from "./style.module.scss";
-import useTestContext from "../../hooks/use-test-context";
 import { URL_IMAGE } from "../../../utils";
 import Pagination from "../../commons/pagination";
+import TestContext from "../../../context/TestContext";
 
 const ITEMS_PER_PAGE = 9;
 
 const HomeContainer = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const { data } = useTestContext();
-
-  const totalPages = Math.ceil(data.length / ITEMS_PER_PAGE);
-
-  const handlePageChange = (page) => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-
-    setCurrentPage(page)
-  }
-
-  const paginatedMovies = data.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE, 
-    currentPage * ITEMS_PER_PAGE
-  );
-  console.log(paginatedMovies, 'filmes paginados');
-
-  console.log(data, "oque vem nos dados");
+  const { data, totalPages, page, goToNextPage, goToPrevPage } = useContext(TestContext);
 
   return (
     <div className={style.container}>
       <section className={style.containerList}>
-        {paginatedMovies.map((datas, index) => (
+        {data.map((datas, index) => (
           <Card
             key={index}
             movieTitle={datas.title}
@@ -50,12 +29,12 @@ const HomeContainer = () => {
         ))}
         <br></br>
         <Pagination
-          handleNextPage={() => handlePageChange(currentPage + 1)}
-          handlePreviousPage={() => handlePageChange(currentPage - 1)}
-          showInactive={currentPage === 1}
+          handleNextPage={goToNextPage}
+          handlePreviousPage={goToPrevPage}
+          showInactive={page === 1}
           totalPages={totalPages}
-          currentPage={currentPage}
-          showInactiveNext={currentPage === totalPages}
+          currentPage={page}
+          showInactiveNext={page === totalPages}
         />
       </section>
     </div>
