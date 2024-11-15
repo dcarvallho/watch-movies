@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <>
       <nav className={style.navbar}>
-        <h1>Teste navbar</h1>
+        <h1>WatchMovieS</h1>
         <div>
-          <button>Meus filmes</button>
+          <button disabled>Meus filmes</button>
         </div>
       </nav>
     </>

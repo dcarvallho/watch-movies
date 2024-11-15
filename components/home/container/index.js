@@ -28,6 +28,7 @@ const HomeContainer = () => {
           </Card>
         ))}
         <br></br>
+      </section>
         <Pagination
           handleNextPage={goToNextPage}
           handlePreviousPage={goToPrevPage}
@@ -36,7 +37,6 @@ const HomeContainer = () => {
           currentPage={page}
           showInactiveNext={page === totalPages}
         />
-      </section>
     </div>
   );
 };
